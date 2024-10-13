@@ -16,4 +16,9 @@ class Client extends Model
         'phone',
         'email',
     ];
+
+    public function getClientAsJSON()
+    {
+        return $this->toJSON();
+    }
 }
