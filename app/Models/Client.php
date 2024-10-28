@@ -10,8 +10,6 @@ class Client extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
-
     protected $fillable = [
         'surname',
         'name',
@@ -23,5 +21,21 @@ class Client extends Model
     public function getClientAsJSON()
     {
         return $this->toJSON();
+    }
+
+    public function removeClient()
+    {
+        $this->delete();
+    }
+
+    public function addClient(Request $request)
+    {
+        Client::create($request->all());
+    }
+
+    public function editClient(Request $request)
+    {
+        $this->fill($request->all());
+        $this->save();
     }
 }
