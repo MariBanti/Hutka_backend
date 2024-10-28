@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('surname',40)->nullable(false);
             $table->string('name',40)->nullable(false);
             $table->string('father_name',40);
-            $table->string('phone', 13)->nullable(false);
+            $table->string('phone', 17)->nullable(false);
             $table->boolean('phone_verified')->default(false);
             $table->string('email')->nullable(false);
             $table->boolean('email_verified')->default(false);
