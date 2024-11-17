@@ -10,6 +10,25 @@ use Illuminate\Http\Response;
 class ClientController extends Controller
 {
     /**
+     * @OA\Schema(
+     *     schema="Client",
+     *     type="object",
+     *     description="Client model",
+     *     properties={
+     *         @OA\Property(property="id", type="string", description="Unique identifier of the client"),
+     *         @OA\Property(property="surname", type="string", maxLength=40, description="Surname of the client"),
+     *         @OA\Property(property="name", type="string", maxLength=40, description="Name of the client"),
+     *         @OA\Property(property="father_name", type="string", maxLength=40, nullable=true, description="Father's name of the client"),
+     *         @OA\Property(property="phone", type="string", maxLength=17, description="Phone number"),
+     *         @OA\Property(property="phone_verified", type="boolean", description="Phone verification status"),
+     *         @OA\Property(property="email", type="string", format="email", description="Email address"),
+     *         @OA\Property(property="email_verified", type="boolean", description="Email verification status"),
+     *         @OA\Property(property="created_at", type="string", format="date-time", description="Timestamp when the client was created"),
+     *         @OA\Property(property="updated_at", type="string", format="date-time", description="Timestamp when the client was last updated"),
+     *     }
+     * )
+     *
+     *
      * @OA\Get(
      *     path="/api/clients",
      *     operationId="getClients",
