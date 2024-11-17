@@ -10,7 +10,21 @@ use Illuminate\Http\Response;
 class ClientController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * @OA\Get(
+     *     path="/api/clients",
+     *     operationId="getClients",
+     *     tags={"Clients"},
+     *     summary="Get list of clients",
+     *     description="Returns a list of all clients",
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(ref="#/components/schemas/Client")
+     *         )
+     *     )
+     * )
      */
     public function index()
     {
@@ -19,7 +33,22 @@ class ClientController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * @OA\Post(
+     *     path="/api/clients",
+     *     operationId="createClient",
+     *     tags={"Clients"},
+     *     summary="Create a new client",
+     *     description="Creates a new client with the given data",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(ref="#/components/schemas/Client")
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="Client created successfully",
+     *         @OA\JsonContent(ref="#/components/schemas/Client")
+     *     )
+     * )
      */
     public function store(Request $request)
     {
@@ -39,7 +68,25 @@ class ClientController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * @OA\Get(
+     *     path="/api/clients/{id}",
+     *     operationId="getClient",
+     *     tags={"Clients"},
+     *     summary="Get a client by ID",
+     *     description="Fetches a single client by their ID",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="Client ID",
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *         @OA\JsonContent(ref="#/components/schemas/Client")
+     *     )
+     * )
      */
     public function show(string $id)
     {
@@ -48,7 +95,29 @@ class ClientController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * @OA\Put(
+     *     path="/api/clients/{id}",
+     *     operationId="updateClient",
+     *     tags={"Clients"},
+     *     summary="Update an existing client",
+     *     description="Updates a client's details",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="Client ID",
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(ref="#/components/schemas/Client")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Client updated successfully",
+     *         @OA\JsonContent(ref="#/components/schemas/Client")
+     *     )
+     * )
      */
     public function update(Request $request, string $id)
     {
@@ -69,7 +138,24 @@ class ClientController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * @OA\Delete(
+     *     path="/api/clients/{id}",
+     *     operationId="deleteClient",
+     *     tags={"Clients"},
+     *     summary="Delete a client",
+     *     description="Deletes a client by their ID",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="Client ID",
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(
+     *         response=204,
+     *         description="Client deleted successfully"
+     *     )
+     * )
      */
     public function destroy(string $id)
     {
