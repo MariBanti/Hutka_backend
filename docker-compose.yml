@@ -30,3 +30,9 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD=root
             - MYSQL_DATABASE=wd05
+    react:
+        build:
+            context: ./react
+        container_name: react
+        ports:
+            - "3000:3000"

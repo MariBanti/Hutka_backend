@@ -1,0 +1,230 @@
+.registration-form {
+	display: flex;
+	flex-direction: column;
+
+	.return {
+		margin: 0.9375rem;
+		font-size: 1.25rem;
+		font-weight: bold;
+
+		.returnBackToMainPage {
+			border: none;
+			background-color: white;
+
+			img {
+				width: 1.25rem;
+				height: 1.25rem;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.registrationInfo {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		@media (max-width: 820px) {
+			width: 100%;
+		}
+
+		.registrationFlight {
+			background-color: var(--main-gray);
+			margin: 0.625rem;
+			border-radius: 10px;
+			padding: 0.625rem;
+			display: flex;
+			width: 60%;
+			flex-direction: column;
+
+			@media (max-width: 820px) {
+				width: 100%;
+			}
+
+			.time {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+
+				hr {
+					width: 20%;
+				}
+			}
+
+			.trip-towns {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				.city {
+					font-family: Montserrat-Bold;
+					font-size: 130%;
+				}
+
+				.station {
+					color: var(--dark-gray);
+				}
+			}
+
+			.travel-time {
+				color: black;
+				font-weight: 300;
+			}
+
+			.departure-time,
+			.arrival-time {
+				color: black;
+				font-family: Montserrat-Bold;
+				font-weight: 700;
+				padding: 1%;
+				font-size: 200%;
+			}
+		}
+
+		.busInfo {
+			background-color: var(--main-gray);
+			margin: 0.625rem;
+			border-radius: 10px;
+			padding: 0.625rem;
+			display: flex;
+			width: 30%;
+			flex-direction: column;
+
+			@media (max-width: 820px) {
+				width: 100%;
+			}
+
+			.labelForInfo {
+				margin: 0.625rem;
+				font-weight: bold;
+				font-size: large;
+			}
+
+			.busModel {
+				color: var(--dark-gray);
+				margin-top: 1.25rem;
+			}
+		}
+	}
+
+	.clientInfo {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		.clientContactInfo {
+			background-color: white;
+			margin: 0.625rem;
+			border-radius: 10px;
+			padding: 0.625rem;
+			display: flex;
+			width: 60%;
+			flex-direction: column;
+			color: var(--gray-black);
+
+			@media (max-width: 768px) {
+				width: 100%;
+			}
+
+			div {
+				margin-left: 0.625rem;
+				color: black;
+				font-weight: bold;
+				font-size: large;
+				margin-bottom: 0.625rem;
+			}
+
+			label {
+				margin-top: 0.625rem;
+			}
+
+			input {
+				border-radius: 15px;
+				background-color: var(--main-gray);
+				border: 2px solid var(--main-gray);
+			}
+		}
+
+		.ticketType {
+			background-color: white;
+			margin: 0.625rem;
+			border-radius: 10px;
+			padding: 0.625rem;
+			display: flex;
+			width: 30%;
+			flex-direction: column;
+			color: var(--gray-black);
+
+			@media (max-width: 820px) {
+				width: 100%;
+			}
+
+			.ticketText {
+				margin-left: 0.625rem;
+				margin-bottom: 1.25rem;
+				color: black;
+				font-weight: bold;
+				font-size: large;
+			}
+
+			.adult,
+			.benefit {
+				display: flex;
+				align-items: center;
+				margin-bottom: 1rem;
+				background-color:var(--main-gray);
+				border-radius:10px;
+
+				button {
+					border: none;
+					background-color: var(--main-gray);
+					align-items: center;
+
+					img {
+						height: 1.25rem;
+						width: 1.25rem;
+					}
+				}
+
+				input[type="number"] {
+					width: 2rem; 
+					height: 50%;
+					margin: 0 0.5rem;
+					border: 2px solid var(--main-gray);
+				}
+			}
+
+			.textAboutbenefit {
+				text-align: end;
+				margin-block: 1.25rem;
+			}
+
+			.resultPrice {
+				font-family: "Montserrat-Bold";
+				color: black;
+				font-weight: 700;
+				font-size: 2rem;
+				text-align: end;
+				margin-bottom: 0.625rem;
+			}
+
+			.buttonsForBookOrBuy {
+				display: flex;
+				justify-content: space-between;
+
+				.bookButton,
+				.buyButton {
+					width: 48%;
+					background-color: var(--main-orange);
+					border: none;
+					border-radius: 20px;
+					padding: 0.9375rem;
+					color: white;
+					height: auto;
+					font-size: large;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}

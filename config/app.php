@@ -123,4 +123,5 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'mix_url' => env('MIX_ASSET_URL', 'localhost'),
 ];

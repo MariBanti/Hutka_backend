@@ -1,0 +1,26 @@
+.bookIsConfirmed {
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+	align-items: center;
+
+	img {
+		height: 50%;
+		margin: 5%;
+	}
+
+	font-size: x-large;
+	color: var(--main-orange);
+	font-weight: bold;
+
+	button {
+		color: white;
+		background-color: var(--main-orange);
+		border: none;
+		border-radius: 40px;
+		margin: 5%;
+		height: 10vh;
+		width: 30vw;
+		font-size: large;
+	}
+}
