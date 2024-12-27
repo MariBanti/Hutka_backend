@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
 import ModalError from "../ModalError";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import imgButtonNext from "../style/img/button-next.png";
 
@@ -10,6 +10,8 @@ const RegistrationCode = () => {
 	const [isSubmitted, setIsSubmitted] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
 	const [modalVisible, setModalVisible] = useState(false);
+    const location = useLocation();
+    const data = location.state?.data
 
 	const handleNavToInfo = (e) => {
 		e.preventDefault();
@@ -24,7 +26,7 @@ const RegistrationCode = () => {
 		}
 
 		console.log("Регистрация по коду:", code);
-		navigate("/enter/registration-info");
+		navigate("/enter/registration-info", {state:{data}});
 	};
 
 	const closeModal = () => {

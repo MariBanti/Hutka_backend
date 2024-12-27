@@ -8,8 +8,19 @@ const EnterOrRegistration = () => {
 	const [errorMessage, setErrorMessage] = useState("");
 	const [modalVisible, setModalVisible] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
+    let name;
+    let surname;
+    let fatherName;
+    let password;
+    const data = {
+        phone,
+        name,
+        surname,
+        fatherName,
+        password
+    }
 
-	const handleNavToCode = (e) => {
+	const handleNavToCode = e => {
 		e.preventDefault();
 		setErrorMessage("");
 		setIsSubmitted(true);
@@ -21,8 +32,10 @@ const EnterOrRegistration = () => {
 			return;
 		}
 
+        data.phone = phone
+
 		console.log("Регистрация или вход по номеру:", phone);
-		navigate("/enter/registration-code");
+		navigate("/enter/registration-code", {state:{data}});
 	};
 
 	const closeModal = () => {
@@ -34,12 +47,12 @@ const EnterOrRegistration = () => {
 			<h1>Вход или регистрация</h1>
 			<label htmlFor="reg-phone-number">Введите номер телефона</label>
 			<input
-				type="tel" 
+				type="tel"
 				id="reg-phone-number"
 				placeholder="+375(xx)xxx-xx-xx"
 				style={{ borderColor: isSubmitted && !phone ? "red" : "" }}
 				value={phone}
-				onChange={(e) => setPhone(e.target.value)}
+				onChange={e => setPhone(e.target.value)}
 			/>
 			<button type="button" className="button" onClick={handleNavToCode}>
 				Войти

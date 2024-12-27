@@ -1,12 +1,12 @@
 :root {
 	--main-orange: #ff9f00;
+	--background-orange: #FFDCA7;
 	--main-gray: #f4f4f4;
 	--dark-gray: #a19d9d;
 	--gray-black: #626262;
 	--white: #ffffff;
 }
 
-// Шрифты
 @font-face {
 	font-family: "Montserrat";
 	src: url("/src/style/fonts/Montserrat-Regular.woff2") format("woff2");
@@ -28,7 +28,6 @@
 	src: url("/src/style/fonts/ShantellSans-Regular.woff2") format("woff2");
 }
 
-// Стили
 a {
 	text-decoration: none;
 }
@@ -48,4 +47,8 @@ hr {
 	border: none;
 	border-top: 3px solid var(--main-orange);
 	border-radius: 10px;
+}
+
+button{
+	cursor: pointer;
 }

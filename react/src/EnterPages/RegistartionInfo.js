@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router-dom";
 import ModalError from "../ModalError";
 
 import imgButtonNext from "../style/img/button-next.png"
@@ -12,6 +12,8 @@ const RegistrationInfo = () =>{
 	const [modalVisible, setModalVisible] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
 	const [isSubmitted, setIsSubmitted] = useState(false);
+    const location = useLocation();
+    const data = location.state.data;
 
 
 	const handleNavToPassword = (e) =>{
@@ -25,7 +27,10 @@ const RegistrationInfo = () =>{
 			setModalVisible(true);
 			return;
 		}
-		navigate('/enter/registration-password');
+        data.name = name
+        data.surname = surname
+        data.fatherName = middleName
+		navigate('/enter/registration-password', {state: data});
 	}
 
 	// const registrationInfo ={

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import imgUtka from './style/img/utka.png'
 import imgHelpCircle from './style/img/Help circle.png'
@@ -38,7 +39,7 @@ const Header = () => {
                 </div>
                 <div>
                     <img src={imgStar} height="30px" alt="Акции" />
-                    <a href="#Salary">Акции</a>
+                    <Link to="/#main-page-sales">Акции</Link>
                 </div>
             </nav>
              <button className='avatar' type='button' onClick={handleNavigation}><img src={imgAvatar} height="50px" alt="Аватар" /></button> 

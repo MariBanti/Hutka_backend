@@ -14,6 +14,7 @@ class Trip extends Model
         'driver',
         'route',
         'price',
-        'time'
+        'time',
+        'seats_left'
     ];
 }

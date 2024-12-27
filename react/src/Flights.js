@@ -1,14 +1,16 @@
 import React from "react";
 import Flight from "./Flight";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import imgHere from "./style/img/location_on.png";
 import imgArrowsDown from "./style/img/Chevrons down.png";
 import imgArrowLeft from "./style/img/Arrow left.png"
+import flight from "./Flight";
 
 const Flights = () => {
 	const navigate = useNavigate();
-
+    const location = useLocation();
+    const flights = location.state?.flights;
 
 	return (
 		<main>
@@ -43,9 +45,9 @@ const Flights = () => {
 					</div>
 				</div>
 				<div className="flights">
-					<Flight />
-					<Flight />
-					<Flight />
+                    {flights && flights.map((flightData, index) => (
+                        <Flight key={index} flId={flightData.id} />
+                    ))}
 				</div>
 			</div>
 		</main>

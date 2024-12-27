@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router-dom";
 import ModalError from "../ModalError";
 
 import imgButtonNext from "../style/img/button-next.png";
@@ -11,6 +11,8 @@ const RegistrationPassword = () => {
 	const [errorMessage, setErrorMessage] = useState("");
 	const [modalVisible, setModalVisible] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
+    const location = useLocation();
+    const data = location.state.data;
 
 	const handleNavToProfile = e => {
 		e.preventDefault();

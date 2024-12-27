@@ -13,11 +13,18 @@ return new class extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vehicle')->references('id')->on('vehicles');
-            $table->foreignId('driver')->references('id')->on('drivers');
-            $table->foreignId('route')->references('id')->on('routes');
-            $table->unsignedSmallInteger('price')->nullable(false)->default(0);
-            $table->dateTime('time')->nullable(false)->default(now()->addWeek());
+            $table->time('departureTime');
+            $table->time('travelTime');
+            $table->time('arrivalTime');
+            $table->string('departureCity');
+            $table->string('departureStation');
+            $table->string('arrivalCity');
+            $table->string('arrivalStation');
+            $table->string('busModel');
+            $table->string('busNumber');
+            $table->string('price');
+            $table->date('date');
+            $table->smallInteger('seats_left')->nullable(false)->default(10);
         });
     }
 
